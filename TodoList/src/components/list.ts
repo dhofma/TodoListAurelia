@@ -20,7 +20,7 @@ export class List {
         let todo: Todo = this.todos[index];
         if (todo.isDone)
             return "table-success";
-        if (new Date(Date.parse(todo.due.toString())) < new Date(Date.now())) {
+        if (new Date(todo.due) < new Date()) {
             return "table-danger";
         }
         return "";
