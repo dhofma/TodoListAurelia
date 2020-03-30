@@ -1,0 +1,32 @@
+<template>
+    <require from="../valueconverter/date"></require>
+
+    <div if.bind="todos" class="container">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>IsDone</th>
+                <th>Created</th>
+                <th>Due</th>
+                <th>Action</th>
+            </tr>
+            <tr repeat.for="todo of todos" class=${getClass(todos.indexOf(todo))}>
+                <td>${$index + 1}</td>
+                <td>${todo.title}</td>
+                <td><input class="form-check-input" type="checkbox" checked.bind="todo.isDone" disabled></td>
+                <td>${todo.created | date}</td>
+                <td>${todo.due | date}</td>
+                <td>
+                    <a route-href='route: edit; params.bind: {id: todo.id}' class="btn btn-outline-info">Edit</a>
+                    <a route-href='route: delete; params.bind: {id: todo.id}' class="btn btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div if.bind="!todos" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</template>
