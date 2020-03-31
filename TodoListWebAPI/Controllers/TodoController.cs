@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace TodoListWebAPI.Controllers
 {
-    [EnableCors("AllowAllHeaders")]
+    [EnableCors("AllowAll")]
     [Route("api/[controller]")]
     [ApiController]
     public class TodoController : ControllerBase

@@ -54,7 +54,7 @@ export class TodoService{
     public async deleteTodo(id: number): Promise<void>{
         let result = await this.httpClient.fetch(this.baseUrl, {
             method: "delete",
-            body: ""+id
+            body: id.toString()
         });
         if(result.ok)
             return Promise.resolve();

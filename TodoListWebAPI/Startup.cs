@@ -26,7 +26,7 @@ namespace TodoListWebAPI {
             services.AddControllers();
 
             services.AddCors(options => {
-                options.AddPolicy("AllowAllHeaders",
+                options.AddPolicy("AllowAll",
                       builder => {
                           builder.AllowAnyOrigin()
                                  .AllowAnyHeader()
@@ -48,7 +48,7 @@ namespace TodoListWebAPI {
 
             app.UseRouting();
 
-            app.UseCors("AllowAllHeaders");
+            app.UseCors("AllowAll");
 
             app.UseAuthorization();
 

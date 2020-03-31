@@ -21,7 +21,7 @@ export class Delete{
     constructor(private todoSvc: TodoService, private router: Router) { }
 
     public delete(): void{
-        this.todoSvc.deleteTodo(this.todo.id).then((item) =>{
+        this.todoSvc.deleteTodo(this.todo.id).then(() =>{
             this.router.navigateToRoute('home');
         }, () =>{
             window.alert("Error, please try again!");
