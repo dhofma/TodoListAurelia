@@ -1,6 +1,7 @@
 import { PLATFORM } from 'aurelia-framework';
 
 require('bootstrap/dist/css/bootstrap.min.css');
+require('bootstrap');
 
 export class App {
   configureRouter(config, router) {
